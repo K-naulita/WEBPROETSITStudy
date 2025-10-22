@@ -1,13 +1,8 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
+import viteStaticCopy from 'vite-plugin-static-copy';
 
 export default defineConfig({
-    server: {
-        host: 'localhost',
-        hmr: {
-            host: 'localhost',
-        },
-    },
     plugins: [
         laravel({
             input: [
@@ -16,5 +11,17 @@ export default defineConfig({
             ],
             refresh: true,
         }),
+        viteStaticCopy({
+            targets: [
+                {
+                    src: 'resources/img', 
+                    dest: ''              
+                }
+            ]
+        })
     ],
+    build: {
+        outDir: 'public/build', 
+        emptyOutDir: true,
+    },
 });

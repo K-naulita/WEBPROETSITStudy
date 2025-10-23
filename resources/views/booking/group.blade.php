@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-@vite(['resources/css/style.css', 'resources/js/app.js'])
+@vite(['css/style.css', 'js/app.js'])
 
 <div class="container my-5">
     <div class="card shadow-sm border-0 p-4" style="background-color: #faf8f6;">
@@ -12,7 +12,7 @@
 
         <div class="row align-items-center">
             <div class="col-md-4 text-center">
-                <img src="{{ Vite::asset('resources/img/booking/group-desk.jpg') }}" 
+                <img src="{{ asset('img/booking/group-desk.jpg') }}" 
                      alt="Group Desk"
                      class="img-fluid rounded shadow-sm mb-3 booking-image"
                      style="max-height: 400px; object-fit: cover;">
